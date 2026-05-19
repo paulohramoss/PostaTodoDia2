@@ -1,0 +1,23 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Content {
+  id               String   @id @default(cuid())
+  niche            String
+  goal             String
+  format           String
+  tone             String
+  product          String
+  audience         String
+  extraNotes       String?
+  generatedContent String
+  createdAt        DateTime @default(now())
+}
